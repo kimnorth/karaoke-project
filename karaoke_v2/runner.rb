@@ -42,9 +42,38 @@ def bookings_menu()
   return @main_runner.bookings_menu
 end
 
-main_menu_choice = display_greeting
+def run_program
+  # show main menu
+  main_menu_choice = display_greeting
+  
+  if main_menu_choice == 1
+    bookings_menu_choice = bookings_menu()
+  elsif main_menu_choice == 3
+    p "Would you like to quit?"
+    answer = gets.chomp
+    if answer == "y"
+      return true
+    else
+      return false
+    end  
+  end
+  # bookings menu
 
-case main_menu_choice
-when 1 
-  bookings_menu()
+
+  # quit
+  
+end
+
+
+# main loop
+quit_program = false
+
+while quit_program == false
+
+  program_exit = run_program()
+
+  if program_exit == true
+    quit_program = true
+  end
+
 end
