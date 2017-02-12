@@ -12,6 +12,9 @@ class Room
   def add_party_to_room(party)
     if party.party_size <= @room_capacity
       @current_guests.push(party)
+      if @song_list.include?(party.favourite_song)
+        puts "Yahoo! My favourite song!"
+      end
     else
       return "Not enough room!"
     end

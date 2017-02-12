@@ -3,6 +3,7 @@
 class Database
 
   attr_accessor :room_list
+
   def initialize()
     @room_list = []
   end

@@ -7,8 +7,8 @@ class TestRoom < MiniTest::Test
 
   def setup
     @new_room = Room.new("Room 1", 10)
-    @party1 = Party.new("Peter James", 8, 100)
-    @party2 = Party.new("Massive Dan", 20, 500)
+    @party1 = Party.new("Peter James", 8, 100, "My Way")
+    @party2 = Party.new("Massive Dan", 20, 500, "My Way")
   end
 
   def test_return_room_name
