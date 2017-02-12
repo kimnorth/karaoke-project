@@ -5,7 +5,7 @@ require_relative('../party.rb')
 class TestParty < MiniTest::Test
 
   def setup
-    @party1 = Party.new("Peter Jones", 8)
+    @party1 = Party.new("Peter Jones", 8, 1000)
   end
 
   def test_return_party_booking_name
@@ -17,7 +17,7 @@ class TestParty < MiniTest::Test
   end
 
   def test_return_party_money
-    assert_equal(1000, @part1.money)
+    assert_equal(1000, @party1.party_money)
   end
 
 

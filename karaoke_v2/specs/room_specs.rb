@@ -7,8 +7,8 @@ class TestRoom < MiniTest::Test
 
   def setup
     @new_room = Room.new("Room 1", 10)
-    @party1 = Party.new("Peter James", 8)
-    @party2 = Party.new("Massive Dan", 20)
+    @party1 = Party.new("Peter James", 8, 100)
+    @party2 = Party.new("Massive Dan", 20, 500)
   end
 
   def test_return_room_name
@@ -54,6 +54,15 @@ class TestRoom < MiniTest::Test
   def test_too_many_guests
     asserted = @new_room.add_party_to_room(@party2)
     assert_equal("Not enough room!", asserted)
+  end
+
+  def test_return_room_tab
+    assert_equal(0, @new_room.room_tab)
+  end
+
+  def test_add_drinks_to_room
+    @new_room.add_to_tab(5)
+    assert_equal(5, @new_room.room_tab)
   end
 
 end

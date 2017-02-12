@@ -1,11 +1,12 @@
 class Room
-  attr_accessor :room_name, :room_capacity, :current_guests, :song_list
+  attr_accessor :room_name, :room_capacity, :current_guests, :song_list, :room_tab
 
   def initialize(room_name, room_capacity)
     @room_name = room_name
     @room_capacity = room_capacity
     @current_guests = []
     @song_list = {}
+    @room_tab = 0
   end
 
   def add_party_to_room(party)
@@ -26,6 +27,10 @@ class Room
 
   def remove_song(song)
     @song_list.delete(song)
+  end
+
+  def add_to_tab(cost)
+    @room_tab += cost
   end
 
 end
