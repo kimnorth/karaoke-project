@@ -75,7 +75,7 @@ class Runner
     @database.add_room(@new_room)
   end
 
-  def remove_room_from_list()
+  def remove_room_from_list() # not working - need to delete the object, not a string
     puts "Type name of room to delete: "
     user_input_room_name = gets.chomp
     @database.remove_room(user_input_room_name)
